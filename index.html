@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Compressor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Image Compressor</h1>
+        <input type="file" id="imageInput" accept="image/*">
+        <div class="input-group">
+            <label>
+                Width (px):
+                <input type="number" id="widthInput" placeholder="Width" />
+            </label>
+            <label>
+                Height (px):
+                <input type="number" id="heightInput" placeholder="Height" />
+            </label>
+        </div>
+        <button id="compressButton">Compress & Resize</button>
+        <canvas id="canvas"></canvas>
+        <a id="downloadLink" download="compressed-image.png">Download</a>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
