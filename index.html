@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Compressor</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Image Compressor</h1>
+    <form id="compressorForm">
+      <label for="images" class="drop-container" id="dropcontainer">
+        <span class="drop-title" id="dropTitle">Drop files here or click to upload</span>
+        <input type="file" id="images" accept="image/*" required>
+      </label>
+
+      <label for="width">Dimensions (optional):</label>
+      <input type="number" id="width" placeholder="Width">
+      <input type="number" id="height" placeholder="Height">
+      <select id="unit">
+        <option value="px">Pixels</option>
+        <option value="cm">Centimeters</option>
+        <option value="inch">Inches</option>
+      </select>
+
+      <label>
+        <input type="checkbox" id="maintainRatio" checked> Maintain Aspect Ratio
+      </label>
+
+      <label for="maxSize">Max JPG Size (KB) (optional):</label>
+      <input type="number" id="maxSize" placeholder="Enter size in KB">
+
+      <button type="button" id="compressBtn">Compress Image</button>
+    </form>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/browser-image-compression@1.0.16/dist/browser-image-compression.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

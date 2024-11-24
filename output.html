@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compressed Output</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+      background: #f7f7f7;
+    }
+    img {
+      max-width: 90%;
+      height: auto;
+      margin-top: 20px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+    }
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: orange;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+    }
+    a:hover {
+      background: darkorange;
+    }
+  </style>
+</head>
+<body>
+  <h1>Compressed Image</h1>
+  <img id="outputImage" alt="Compressed Output">
+  <a id="downloadLink" download="compressed-image.jpg">Download Image</a>
+  <script>
+    const outputData = JSON.parse(sessionStorage.getItem("outputData"));
+    const outputImage = document.getElementById("outputImage");
+    const downloadLink = document.getElementById("downloadLink");
+
+    if (outputData) {
+      outputImage.src = outputData.compressedDataUrl;
+      downloadLink.href = outputData.compressedDataUrl;
+    } else {
+      document.body.innerHTML = "<p>No data found! Please compress an image first.</p>";
+    }
+  </script>
+</body>
+</html>
